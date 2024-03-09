@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Matcher</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        ::placeholder {
+            font-family: Arial, sans-serif; /* Set font family */
+            font-size: 14px; /* Set font size */
+            color: #999; /* Set placeholder text color */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>{{ name }}</h3>
+        <h2>Regex Matcher</h2>
+        <form action='/results' method="POST">
+            <div class="form-group">
+                <label for="note">Regex Pattern:</label>
+                <input type="text" id="note" name="note" placeholder="e.g. \d+" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="testnote">Test Note:</label>
+                <textarea id="testnote" name="testnote" placeholder=" e.g. Enter string to find match" rows="18" cols="65" style="resize: none;" autocomplete="off"></textarea>
+            </div>
+            <div class="button-container">
+                <button type="submit" name="button">Find Match</button>
+            </div>
+        </form>
+        <div class="result">
+            <div>{{ output }}</div>
+        </div>
+    </div>
+</body>
+</html>
